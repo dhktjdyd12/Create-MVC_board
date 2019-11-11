@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>ID 중복체크</title>
 <script type="text/javascript">
 	function idCheck() {
 		window.opener.document.getElementById("idch").value="Checked";

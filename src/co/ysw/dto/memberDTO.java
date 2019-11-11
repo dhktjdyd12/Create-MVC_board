@@ -2,6 +2,9 @@ package co.ysw.dto;
 
 import java.sql.Date;
 
+/*
+ * memebrDTO 클래스는 회원들의 정보들을 저장할 목적으로 만든 클래스이다.
+ */
 public class memberDTO {
 	private String id;
 	private String name;

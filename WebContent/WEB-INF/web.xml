@@ -1,19 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>MemberManager</display-name>
-  <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
-  </welcome-file-list>
-  
-  <servlet>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>MemberManager</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- <servlet> 태그는 HttpServlet을 상속받고 있는 클래스를 web.xml에 등록할 떄 사용 -->
+	<!-- <servlet> 태그를 사용하면 반드시 하위에 <servlet-name>과 <servlet-class>를 반드시 써야함 -->
+
+	<servlet>
+		<!-- co.ysw.controller.newFrontContrller 서블릿을 Controller 이름으로 웹서버에 등록 -->
 		<servlet-name>Controller</servlet-name>
-		<!-- 자기 src에 있는 것을 작성 -->
-		<servlet-class>co.ysw.controller.newFrontController</servlet-class>   
-  </servlet>
-  
-  <servlet-mapping>
+		<servlet-class>co.ysw.controller.newFrontController</servlet-class>
+
+		<!-- co.ysw.controller.newFrontContrller 서블릿에 charset=UTF-8 변수를 저장 -->
+		<init-param>
+			<param-name>charset</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</servlet>
+
+	<!-- Contrller 이름으로 등록된 서블릿은 URL 요청 정보가 .do로 끝나는 요청이 들어올 때마다 실행 -->
+	<servlet-mapping>
 		<servlet-name>Controller</servlet-name>
 		<url-pattern>*.do</url-pattern>
-  </servlet-mapping>
-  
+	</servlet-mapping>
+	
+	<!-- http://localhost:9090/dev/로 요청이 들어오면 index.jsp 페이지가실행되도록 설정 -->
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
 </web-app>

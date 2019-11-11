@@ -12,6 +12,8 @@ public class boardDTO {
 	private int group;
 	private int step;
 	private int indent;
+	private String userId;
+	
 	public int getId() {
 		return id;
 	}
@@ -66,6 +68,10 @@ public class boardDTO {
 	public void setIndent(int indent) {
 		this.indent = indent;
 	}
-	
-	
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 }
